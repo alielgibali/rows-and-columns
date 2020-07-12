@@ -92,8 +92,9 @@ class _GridItemState extends State<GridItem> {
                 : null,
             children: <Widget>[
               ...widget.dataSource[columnIndex]['columns']
-                  .map<Widget>((e) => onlyThreeItemsOfList(e))
-                  .toList(),
+                      .map<Widget>((e) => onlyThreeItemsOfList(e))
+                      .toList() ??
+                  null,
               Row(
                 children: <Widget>[
                   _iconButton(Icons.edit, () {}),
